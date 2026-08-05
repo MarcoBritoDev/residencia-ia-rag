@@ -1,6 +1,6 @@
 [
   {
-    "amostra": "Literatura científica publicada entre 2015 e 2024 nas bases de dados PubMed, Scopus, SciELO e Web of Science.",
+    "amostra": "literatura científica (artigos publicados entre 2015 e 2024 nas bases de dados PubMed, Scopus, SciELO e Web of Science)",
     "ano": "não informado",
     "autores": [
       "Juracy Barbosa dos Santos",
@@ -8,25 +8,25 @@
       "Rui Nunes"
     ],
     "limitacoes": "não informado",
-    "metodo": "Pesquisa de natureza qualitativa, do tipo exploratória, com abordagem metodológica baseada em revisão bibliográfica narrativa.",
+    "metodo": "pesquisa qualitativa, do tipo exploratória, com abordagem metodológica baseada em revisão bibliográfica narrativa",
     "metrica": "não informado",
     "titulo": "Entre o algoritmo e o Juramento de Hipócrates: bioética na era da inteligência artificial",
     "arquivo": "bioetica_e_ia.md"
   },
   {
-    "amostra": "revisão narrativa de literatura sobre riscos associados à escrita com IA e documentos normativos/diretrizes institucionais",
+    "amostra": "revisão narrativa de literatura sobre riscos associados à escrita com IA e integração com documentos normativos e diretrizes institucionais",
     "ano": "2025",
     "autores": [
       "Rafael Cardoso Sampaio"
     ],
     "limitacoes": "não informado",
-    "metodo": "revisão narrativa de literatura integrada com análise de documentos normativos e diretrizes institucionais para o desenvolvimento de um guia prático de cinco fases",
+    "metodo": "revisão narrativa de literatura e desenvolvimento de um guia prático composto por cinco fases metodológicas",
     "metrica": "não informado",
     "titulo": "Escrita acadêmica ética, responsável e humana com inteligência artificial",
     "arquivo": "escrita_academica_ia.md"
   },
   {
-    "amostra": "levante inicial de dados empíricos, análises acadêmicas, reportagens jornalísticas e levantamento bibliométrico via APIs de sites de catalogação de trabalhos científicos sobre o Twitter/X.",
+    "amostra": "Twitter/X (análises de dados empíricos, levantamento bibliométrico via APIs de sites de catalogação de trabalhos científicos, análises acadêmicas e reportagens jornalísticas)",
     "ano": "2025",
     "autores": [
       "Ettore Schimid Batalha",
@@ -34,8 +34,8 @@
       "Bruno Daniel Vendruscolo Espinosa Velásquez"
     ],
     "limitacoes": "não informado",
-    "metodo": "Abordagem interdisciplinar integrando Sociologia Digital e Ciências da Computação, utilizando revisão bibliográfica e levantamento bibliométrico.",
-    "metrica": "não informado",
+    "metodo": "Abordagem interdisciplinar (Sociologia Digital e Ciências da Computação) incluindo levantamento bibliométrico por APIs de catalogação científica, revisão bibliográfica e análise de dados empíricos e jornalísticos.",
+    "metrica": "Métricas de engajamento (aprovação/desaprovação, curtidas, respostas, compartilhamentos) e relevância do debate na literatura acadêmica.",
     "titulo": "O caso Twitter/X: algoritmo, espaço público e ultraliberalismo digital",
     "arquivo": "twitter_algoritmo.md"
   }
