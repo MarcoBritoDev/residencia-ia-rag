@@ -1,0 +1,42 @@
+[
+  {
+    "amostra": "Literatura científica (artigos publicados entre 2015 e 2024 nas bases PubMed, Scopus, SciELO e Web of Science)",
+    "ano": "2025",
+    "autores": [
+      "Juracy Barbosa dos Santos",
+      "Guilhermina Rego",
+      "Rui Nunes"
+    ],
+    "limitacoes": "Predomínio de estudos teóricos e normativos; escassez de dados empíricos sobre a experiência de médicos e pacientes em contextos reais de uso de IA; falta de integração entre marcos legais, clínicos e éticos.",
+    "metodo": "Pesquisa de natureza qualitativa, do tipo exploratória, com abordagem metodológica baseada em revisão bibliográfica narrativa.",
+    "metrica": "não informado",
+    "titulo": "Entre o algoritmo e o Juramento de Hipócrates: bioética na era da inteligência artificial",
+    "arquivo": "bioetica_e_ia.md"
+  },
+  {
+    "amostra": "revisão narrativa de literatura sobre riscos associados à escrita com IA e documentos normativos e diretrizes institucionais",
+    "ano": "2025",
+    "autores": [
+      "Rafael Cardoso Sampaio"
+    ],
+    "limitacoes": "o processo pode reduzir parte da eficiência oferecida pela IA devido aos processos de curadoria e reflexão; aplicação das fases pode não ser sequencial ou integral",
+    "metodo": "revisão narrativa de literatura integrada com documentos normativos e diretrizes institucionais para o desenvolvimento de um guia prático de cinco fases",
+    "metrica": "não informado",
+    "titulo": "Escrita acadêmica ética, responsável e humana com inteligência artificial",
+    "arquivo": "escrita_academica_ia.md"
+  },
+  {
+    "amostra": "Acervo inicial de 54.154 registros de artigos em inglês e português (provenientes de OpenAlex, Crossref Metadata API, SciELO ArticleMeta API e Publish or Perish) publicados entre 2006 e 2025.",
+    "ano": "2025",
+    "autores": [
+      "Ettore Schimid Batalha",
+      "Jefferson Ribeiro da Silva",
+      "Bruno Daniel Vendruscolo Espinosa Velásquez"
+    ],
+    "limitacoes": "não informado",
+    "metodo": "Abordagem interdisciplinar (Sociologia Digital e Ciências da Computação) integrando revisão bibliográfica, levantamento bibliométrico via APIs, mineração de texto (NLP) com expressões regulares, análise estatística de séries temporais interrompidas (ITS) via regressão linear generalizada e classificação por área do conhecimento.",
+    "metrica": "Frequência de termos-chave ('espaço público', 'public sphere', 'arena de debate' e 'opinião pública'), volume de publicações anuais (Nt), proporção de menções (Pt) e coeficientes de regressão linear (β2 e β3) para análise de intervenção.",
+    "titulo": "O caso Twitter/X: algoritmo, espaço público e ultraliberalismo digital",
+    "arquivo": "twitter_algoritmo.md"
+  }
+]
