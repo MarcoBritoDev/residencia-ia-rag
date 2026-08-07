@@ -31,15 +31,19 @@ cores = ["blue"]*6 + ["red"]*6 + ["green"]*6
 
 vetores = np.array(gerar_embedding(termos))
 
-coords = TSNE(n_components=2, perplexity=5, random_state=42,
+# n_components=3 → agora projeta em 3 dimensões em vez de 2
+coords = TSNE(n_components=3, perplexity=5, random_state=42,
               init="pca").fit_transform(vetores)
 
-plt.figure(figsize=(9, 7))
-plt.scatter(coords[:, 0], coords[:, 1], c=cores, s=80)
-for (x, y), termo in zip(coords, termos):
-    plt.annotate(termo, (x, y), fontsize=10, xytext=(6, 4),
-                 textcoords="offset points")
-plt.title("Embeddings reduzidos para 2D (via t-SNE)")
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(projection="3d")          # eixo 3D
+ax.scatter(coords[:, 0], coords[:, 1], coords[:, 2], c=cores, s=80)
+
+# em 3D o rótulo usa ax.text com três coordenadas
+for (x, y, z), termo in zip(coords, termos):
+    ax.text(x, y, z, termo, fontsize=9)
+
+ax.set_title("Embeddings reduzidos para 3D (via t-SNE)")
 plt.tight_layout()
-plt.savefig("mapa_tsne.png", dpi=120)
+plt.savefig("mapa_tsne_3d.png", dpi=120)
 plt.show()
