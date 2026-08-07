@@ -1,76 +1,72 @@
-# Residência em IA Generativa & RAG — Instituto ECOA / PUC-Rio
+# Residência em IA Generativa & RAG
 
-Repositório com o desenvolvimento das atividades da **Residência Trilhas em Tecnologia — Trilha de IA Generativa & RAG** (Instituto ECOA, PUC-Rio). Cada aula é organizada em sua própria pasta, e o repositório acompanha a evolução do trabalho ao longo do programa.
+Projeto da residência em IA Generativa e RAG (Retrieval-Augmented Generation), promovida pelo **Instituto ECOA** em parceria com a **PUC-Rio**. O repositório acompanha as atividades práticas aula a aula, do primeiro contato com LLMs por código até a construção de um pipeline de RAG.
+
+## Stack
+
+- **Python 3.11** em ambiente virtual (`.venv`)
+- **OpenRouter** como provedor de modelos (via SDK da OpenAI e chamadas HTTP diretas)
+- **Docling** — conversão de PDF para Markdown
+- **NumPy**, **scikit-learn**, **Matplotlib** — cálculo vetorial e visualização
 
 ## Estrutura
 
 ```
-residencia-ia-rag/
-├── AULA_01/            # Primeira chamada a um LLM por código
-│   └── hello_llm.py
-├── AULA_02/            # Conversão de PDFs e extração de metadados
-│   ├── pdfs/           # Artigos científicos de entrada (PDF)
-│   ├── markdown/       # Artigos convertidos para Markdown
-│   ├── converter.py    # Tarefa 1: PDF → Markdown (Docling)
-│   ├── extrair.py      # Tarefa 2: extração de metadados (Structured Outputs)
-│   └── resultados.json # Metadados extraídos dos artigos
-├── .env.example        # Molde das variáveis de ambiente (sem a chave real)
+residencia-rag/
+├── AULA_01/   # primeira chamada a um LLM por código
+├── AULA_02/   # conversão de PDF→Markdown e extração estruturada
+├── AULA_03/   # embeddings, distâncias e busca semântica
+├── .env       # chaves de API (NÃO versionado)
 ├── .gitignore
-├── requirements.txt
-└── README.md
+└── requirements.txt
 ```
 
-## Aulas
+## Setup
 
-### Aula 01 — Primeira chamada a um LLM por código
+```
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+pip install -r requirements.txt
+```
 
-Configuração do ambiente de desenvolvimento e primeira interação com um modelo de linguagem via código: ambiente virtual, gerenciamento seguro da chave de API com variáveis de ambiente, e uma chamada de chat que recebe e trata a resposta do modelo.
+Crie um arquivo `.env` na raiz com sua chave (veja o modelo em `.env.example`):
 
-### Aula 02 — Conversão de documentos e extração de metadados
+```
+OPENROUTER_API_KEY=sua_chave_aqui
+```
 
-**Tarefa 1 — Conversão (PDF → Markdown).** Ingestão de artigos científicos em PDF e conversão para Markdown usando a biblioteca **Docling**, que faz análise de layout, reconstrução da ordem de leitura e detecção de estrutura. É a primeira etapa de um pipeline de RAG: transformar documentos em texto limpo.
+---
 
-**Tarefa 2 — Extração de metadados (Structured Outputs).** A partir dos arquivos Markdown, cada documento é processado por um LLM usando **Structured Outputs** (parâmetro `response_format` com `json_schema`), que obriga o modelo a responder em um formato JSON fixo. São extraídos, no mínimo, título, autores e ano de publicação — além de campos adicionais como método, amostra, métrica e limitações. O resultado é salvo em `resultados.json`, transformando documentos de texto em dados estruturados e consultáveis.
+## AULA_01 — Primeira chamada a um LLM
 
-## Tecnologias
+Primeiro contato com um modelo de linguagem por código, usando o SDK da OpenAI apontado para o endpoint do OpenRouter (`https://openrouter.ai/api/v1`) com modelos gratuitos. Configuração de ambiente virtual, `.env` e `.gitignore`.
 
-- **Python** (ambiente virtual com `venv`)
-- **python-dotenv** — gerenciamento de chaves via variáveis de ambiente
-- **SDK da OpenAI**, apontado para o **OpenRouter**
-- **Docling** — conversão de documentos para Markdown
-- **Structured Outputs** (JSON Schema) para extração de metadados
+## AULA_02 — PDF para Markdown e extração estruturada
 
-## Notas técnicas
+- `converter.py` — converte três artigos científicos de PDF para Markdown com a biblioteca Docling (rodando localmente).
+- `extrair.py` — lê cada `.md` e usa o modelo com um schema JSON para extrair campos estruturados (título, autores, ano, método, amostra, métrica, limitações).
+- `resultados.json` — saída consolidada da extração.
 
-- **Provedor de LLM:** as chamadas usam o **OpenRouter** (com a `base_url` do OpenRouter e modelos gratuitos), e não a API paga da OpenAI diretamente. O SDK é o mesmo; muda apenas o endpoint.
-- **Segurança da chave:** a chave de API fica somente no arquivo `.env` (ignorado pelo Git via `.gitignore`) e nunca é versionada. O `.env.example` documenta apenas a estrutura esperada, sem valores reais.
-- **Qualidade de entrada:** um dos PDFs estava corrompido (streams internos danificados), impedindo a extração automática de texto. Já na extração de metadados, enviar o texto completo do Markdown (em vez de um trecho truncado) foi necessário para capturar campos que ficavam no fim do documento, como o ano de publicação. Ambos os casos reforçam a importância de validar a qualidade e a completude dos dados de entrada em um pipeline de ingestão.
+## AULA_03 — Embeddings, distâncias e busca semântica
 
-## Como executar
+O núcleo conceitual do RAG: transformar texto em vetores, medir proximidade de significado e recuperar trechos relevantes.
 
-1. Criar e ativar o ambiente virtual:
+- **`embeddings.py`** — primeiro teste de embedding: gera vetores de três frases e calcula a similaridade de cosseno entre elas, provando que o modelo captura significado.
+- **`distancias.py`** — funções `distancia_euclidiana()` e `distancia_cosseno()` (esta última como `1 - similaridade`), validadas contra vetores simples de resultado conhecido.
+- **`similaridade.py`** — ranqueia termos por proximidade a uma consulta usando as duas métricas, e demonstra que embedding recupera por sentido, não por palavra igual (busca literal falha onde a semântica acerta).
+- **`ancora.py`** — testa os limites do embedding comparando uma frase-âncora com variações (equivalente, relacionada, de outro domínio e negação), evidenciando a conhecida fraqueza dos embeddings com **negação**.
+- **`busca_semantica.py`** — busca semântica sobre os artigos da AULA_02, comparando quatro estratégias de chunking (linha, parágrafo, capítulo e tamanho fixo com sobreposição) e incluindo limpeza do texto herdado da conversão de PDF.
+- **`mapa_tsne_3d.py`** — reduz os embeddings a 3D com t-SNE para visualizar o agrupamento por categoria (animais, veículos, frutas).
 
-   ```
-   python -m venv .venv
-   .venv\Scripts\Activate.ps1     # Windows (PowerShell)
-   ```
+**Principais aprendizados da aula:**
 
-2. Instalar as dependências:
+- Embeddings da OpenAI são normalizados, então distância euclidiana e de cosseno concordam na ordenação; divergência indicaria vetores não-normalizados.
+- Visualizações 2D/3D (PCA, t-SNE) ilustram a intuição, mas o ranking no espaço completo (1536 dimensões) é a fonte da verdade.
+- A escolha do tamanho do chunk é decisiva: o chunking por tamanho fixo com sobreposição recupera os trechos mais úteis, mesmo com score de topo mais baixo — **score alto não é sinônimo de trecho útil**.
+- Pré-processamento (limpeza de hifenização e ruído da extração) impacta diretamente a qualidade da recuperação.
 
-   ```
-   pip install -r requirements.txt
-   ```
+---
 
-3. Criar um arquivo `.env` na raiz (baseado no `.env.example`) com a chave:
+## Segurança
 
-   ```
-   OPENROUTER_API_KEY=sua_chave_aqui
-   ```
-
-4. Executar as atividades:
-
-   ```
-   python AULA_01/hello_llm.py       # primeira chamada ao LLM
-   python AULA_02/converter.py       # PDF -> Markdown
-   python AULA_02/extrair.py         # extracao de metadados -> resultados.json
-   ```
+O arquivo `.env` contém a chave de API e **nunca** é versionado — está no `.gitignore`. Antes de cada commit, o `git status` é verificado para garantir que nenhuma credencial ou o `.venv` sejam enviados ao repositório.
