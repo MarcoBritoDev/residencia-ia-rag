@@ -49,7 +49,6 @@ def carregar_texto(pasta="../AULA_02/markdown"):
     return "\n\n".join(partes)
 
 
-# ---------- os 10 grupos da tabela ----------
 def fixo(size, overlap=0):
     """CharacterTextSplitter: corte por tamanho, sem respeitar estrutura."""
     splitter = CharacterTextSplitter(
