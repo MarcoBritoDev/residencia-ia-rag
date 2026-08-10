@@ -7,16 +7,21 @@ Projeto da residência em IA Generativa e RAG (Retrieval-Augmented Generation), 
 - **Python 3.11** em ambiente virtual (`.venv`)
 - **OpenRouter** como provedor de modelos (via SDK da OpenAI e chamadas HTTP diretas)
 - **Docling** — conversão de PDF para Markdown
+- **LangChain** (`langchain-text-splitters`) — estratégias de chunking
 - **NumPy**, **scikit-learn**, **Matplotlib** — cálculo vetorial e visualização
 
 ## Estrutura
 
 ```
 residencia-rag/
-├── AULA_01/   # primeira chamada a um LLM por código
-├── AULA_02/   # conversão de PDF→Markdown e extração estruturada
-├── AULA_03/   # embeddings, distâncias e busca semântica
-├── .env       # chaves de API (NÃO versionado)
+├── AULA_01/       # primeira chamada a um LLM por código
+├── AULA_02/       # conversão de PDF→Markdown e extração estruturada
+├── AULA_03/       # embeddings, distâncias e busca semântica
+├── AULA_04/       # chunking com LangChain sobre base ampliada
+├── documentos/    # base de dados central do projeto
+│   ├── pdfs/      # PDFs de origem (NÃO versionados)
+│   └── markdown/  # documentos convertidos (versionados)
+├── .env           # chaves de API (NÃO versionado)
 ├── .gitignore
 └── requirements.txt
 ```
@@ -65,8 +70,22 @@ O núcleo conceitual do RAG: transformar texto em vetores, medir proximidade de 
 - A escolha do tamanho do chunk é decisiva: o chunking por tamanho fixo com sobreposição recupera os trechos mais úteis, mesmo com score de topo mais baixo — **score alto não é sinônimo de trecho útil**.
 - Pré-processamento (limpeza de hifenização e ruído da extração) impacta diretamente a qualidade da recuperação.
 
+## AULA_04 — Chunking com LangChain sobre base ampliada
+
+Reimplementação das estratégias de chunking com a biblioteca **LangChain**, agora sobre uma base expandida de 12 documentos (os 3 artigos anteriores mais 9 papers fundadores de LLMs e RAG: *Attention Is All You Need*, *BERT*, *GPT-3/4*, *InstructGPT*, *LoRA*, *RAG*, *LLaMA*, *Scaling Laws*).
+
+- `documentos/converter.py` — versão do conversor Docling que lê de `documentos/pdfs/`, escreve em `documentos/markdown/` e **pula arquivos já convertidos**, com tratamento de erro por documento.
+- `chunking_langchain.py` — compara 10 estratégias de chunking isolando uma variável por vez (tamanho, sobreposição, estrutura), usando `CharacterTextSplitter`, `RecursiveCharacterTextSplitter` e `MarkdownHeaderTextSplitter`.
+
+**Principais aprendizados da aula:**
+
+- **A busca semântica discrimina assunto, não palavra:** para uma consulta sobre ética algorítmica, todos os trechos de topo vieram dos documentos de ética, mesmo com 9 papers técnicos (que também citam "algoritmo") competindo na base.
+- **Existe um ponto ideal de tamanho de chunk:** trechos pequenos maximizam o score mas cortam contexto; trechos grandes preservam contexto mas diluem o score.
+- **O `RecursiveCharacterTextSplitter` produz trechos mais limpos** que o corte de tamanho fixo, por respeitar fronteiras de parágrafo e frase — é o padrão recomendado.
+- **Chunking por estrutura (seção) é inviável em base heterogênea:** um paper sem subtítulos gerou um chunk de 52.313 caracteres, muito acima do limite da API de embedding. Estratégias de tamanho fixo e recursivo são mais seguras por garantirem um teto de tamanho.
+
 ---
 
 ## Segurança
 
-O arquivo `.env` contém a chave de API e **nunca** é versionado — está no `.gitignore`. Antes de cada commit, o `git status` é verificado para garantir que nenhuma credencial ou o `.venv` sejam enviados ao repositório.
+O arquivo `.env` contém a chave de API e **nunca** é versionado — está no `.gitignore`, junto com o `.venv` e os PDFs de origem (`documentos/pdfs/`), que são pesados e reproduzíveis a partir dos scripts. Apenas os markdowns convertidos são versionados. Antes de cada commit, o `git status` é verificado para garantir que nenhuma credencial seja enviada ao repositório.
