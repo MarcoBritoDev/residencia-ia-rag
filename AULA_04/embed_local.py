@@ -1,7 +1,5 @@
 from sentence_transformers import SentenceTransformer
 
-# modelo configurável, como o professor pede na seção 9.
-# multilíngue (funciona bem em português) e leve.
 EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"
 
 # carrega uma vez só (na primeira execução, baixa ~400 MB; depois usa cache local)
