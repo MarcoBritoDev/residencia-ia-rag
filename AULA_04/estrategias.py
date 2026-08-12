@@ -5,7 +5,7 @@ from langchain_text_splitters import (
     MarkdownHeaderTextSplitter,
 )
 
-# --- sentenças: baixa o tokenizer do NLTK uma vez ---
+
 import nltk
 try:
     nltk.data.find("tokenizers/punkt_tab")
@@ -14,7 +14,7 @@ except LookupError:
 from nltk.tokenize import sent_tokenize
 
 
-# ---------- as 10 estratégias, na ordem da tabela do professor ----------
+
 
 def fixo(size, overlap=0):
     """Testes 1-6: CharacterTextSplitter, corte por tamanho fixo."""
@@ -43,7 +43,7 @@ def recursivo(size=1000, overlap=100):
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=size,
         chunk_overlap=overlap,
-        separators=["\n\n", "\n", " ", ""],   # parágrafo → linha → espaço → caractere
+        separators=["\n\n", "\n", " ", ""],   
     )
     return lambda texto: splitter.split_text(texto)
 
@@ -57,7 +57,7 @@ def por_markdown(texto):
     return [d.page_content for d in docs]
 
 
-# tabela de estratégias: (id, nome, estratégia, config para o JSON depois)
+
 ESTRATEGIAS = [
     (1,  "fixed",              fixo(200),                  {"chunk_size": 200,  "chunk_overlap": 0}),
     (2,  "fixed",              fixo(500),                  {"chunk_size": 500,  "chunk_overlap": 0}),
@@ -72,7 +72,7 @@ ESTRATEGIAS = [
 ]
 
 
-# --- teste: roda as 10 num texto pequeno e mostra contagem + amostra ---
+
 if __name__ == "__main__":
     texto_teste = """# Introdução
 
