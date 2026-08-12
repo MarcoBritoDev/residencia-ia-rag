@@ -1,14 +1,10 @@
 import json
 from pathlib import Path
 
-# ============================================================
-# EXERCÍCIO 2 — Schema de metadados
-# ============================================================
-# Campos obrigatórios (definidos pelo professor) + 3 campos próprios.
-# Este schema decide o que será possível FILTRAR e CITAR depois da indexação.
+
 
 SCHEMA = {
-    # --- campos obrigatórios ---
+  
     "fonte":          "nome do arquivo .md de origem (ex.: 'bioetica_e_ia.md')",
     "documento_id":   "identificador do documento (ex.: 'doc03')",
     "chunk_index":    "posição do chunk dentro do documento (0, 1, 2, ...)",
@@ -17,13 +13,13 @@ SCHEMA = {
     "chunk_overlap":  "overlap configurado na estratégia",
     "n_caracteres":   "tamanho real do chunk em caracteres",
 
-    # --- campos próprios (justificados abaixo) ---
+ 
     "n_tokens":       "número de tokens do chunk (contado com tiktoken)",
     "idioma":         "idioma do documento ('pt' ou 'en')",
     "secao":          "heading/seção de onde o chunk veio (quando disponível)",
 }
 
-# Justificativa dos 3 campos próprios (Entrega 2 do exercício)
+
 JUSTIFICATIVAS = {
     "n_tokens": (
         "Permite responder: 'este chunk cabe na janela de contexto do LLM?'. "
@@ -84,7 +80,7 @@ if __name__ == "__main__":
     imprimir_schema()
     exemplo_preenchido()
 
-    # respostas às perguntas finais do exercício
+    
     print("\n" + "=" * 70)
     print("RESPOSTAS")
     print("=" * 70)
