@@ -2,3 +2,4 @@
 .env
 documentos/pdfs/
 results/*/
+__pycache__/

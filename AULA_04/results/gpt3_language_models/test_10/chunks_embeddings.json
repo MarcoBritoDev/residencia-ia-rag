@@ -396,7 +396,8 @@
     ],
     "metadata": {
       "h2": "Language Models are Few-Shot Learners"
-    }
+    },
+    "tokens": 316
   },
   {
     "chunk_id": "doc05_test10_chunk002",
@@ -795,7 +796,8 @@
     ],
     "metadata": {
       "h2": "Abstract"
-    }
+    },
+    "tokens": 371
   },
   {
     "chunk_id": "doc05_test10_chunk003",
@@ -1194,7 +1196,8 @@
     ],
     "metadata": {
       "h2": "Contents"
-    }
+    },
+    "tokens": 893
   },
   {
     "chunk_id": "doc05_test10_chunk004",
@@ -1593,7 +1596,8 @@
     ],
     "metadata": {
       "h2": "1 Introduction"
-    }
+    },
+    "tokens": 2692
   },
   {
     "chunk_id": "doc05_test10_chunk005",
@@ -1992,7 +1996,8 @@
     ],
     "metadata": {
       "h2": "2 Approach"
-    }
+    },
+    "tokens": 1745
   },
   {
     "chunk_id": "doc05_test10_chunk006",
@@ -2391,7 +2396,8 @@
     ],
     "metadata": {
       "h2": "2.1 Model and Architectures"
-    }
+    },
+    "tokens": 348
   },
   {
     "chunk_id": "doc05_test10_chunk007",
@@ -2790,7 +2796,8 @@
     ],
     "metadata": {
       "h2": "2.2 Training Dataset"
-    }
+    },
+    "tokens": 447
   },
   {
     "chunk_id": "doc05_test10_chunk008",
@@ -3189,7 +3196,8 @@
     ],
     "metadata": {
       "h2": "Total Compute Used During Training"
-    }
+    },
+    "tokens": 478
   },
   {
     "chunk_id": "doc05_test10_chunk009",
@@ -3588,7 +3596,8 @@
     ],
     "metadata": {
       "h2": "2.3 Training Process"
-    }
+    },
+    "tokens": 136
   },
   {
     "chunk_id": "doc05_test10_chunk010",
@@ -3987,7 +3996,8 @@
     ],
     "metadata": {
       "h2": "2.4 Evaluation"
-    }
+    },
+    "tokens": 620
   },
   {
     "chunk_id": "doc05_test10_chunk011",
@@ -4386,7 +4396,8 @@
     ],
     "metadata": {
       "h2": "3 Results"
-    }
+    },
+    "tokens": 617
   },
   {
     "chunk_id": "doc05_test10_chunk012",
@@ -4785,7 +4796,8 @@
     ],
     "metadata": {
       "h2": "3.1 Language Modeling, Cloze, and Completion Tasks"
-    }
+    },
+    "tokens": 51
   },
   {
     "chunk_id": "doc05_test10_chunk013",
@@ -5184,7 +5196,8 @@
     ],
     "metadata": {
       "h2": "3.1.1 Language Modeling"
-    }
+    },
+    "tokens": 157
   },
   {
     "chunk_id": "doc05_test10_chunk014",
@@ -5583,7 +5596,8 @@
     ],
     "metadata": {
       "h2": "3.1.2 LAMBADA"
-    }
+    },
+    "tokens": 1166
   },
   {
     "chunk_id": "doc05_test10_chunk015",
@@ -5982,7 +5996,8 @@
     ],
     "metadata": {
       "h2": "3.1.3 HellaSwag"
-    }
+    },
+    "tokens": 142
   },
   {
     "chunk_id": "doc05_test10_chunk016",
@@ -6381,7 +6396,8 @@
     ],
     "metadata": {
       "h2": "3.1.4 StoryCloze"
-    }
+    },
+    "tokens": 110
   },
   {
     "chunk_id": "doc05_test10_chunk017",
@@ -6780,7 +6796,8 @@
     ],
     "metadata": {
       "h2": "3.2 Closed Book Question Answering"
-    }
+    },
+    "tokens": 974
   },
   {
     "chunk_id": "doc05_test10_chunk018",
@@ -7179,7 +7196,8 @@
     ],
     "metadata": {
       "h2": "3.3 Translation"
-    }
+    },
+    "tokens": 1624
   },
   {
     "chunk_id": "doc05_test10_chunk019",
@@ -7578,7 +7596,8 @@
     ],
     "metadata": {
       "h2": "3.4 Winograd-Style Tasks"
-    }
+    },
+    "tokens": 721
   },
   {
     "chunk_id": "doc05_test10_chunk020",
@@ -7977,7 +7996,8 @@
     ],
     "metadata": {
       "h2": "3.5 Common Sense Reasoning"
-    }
+    },
+    "tokens": 878
   },
   {
     "chunk_id": "doc05_test10_chunk021",
@@ -8376,7 +8396,8 @@
     ],
     "metadata": {
       "h2": "3.6 Reading Comprehension"
-    }
+    },
+    "tokens": 358
   },
   {
     "chunk_id": "doc05_test10_chunk022",
@@ -8775,7 +8796,8 @@
     ],
     "metadata": {
       "h2": "3.7 SuperGLUE"
-    }
+    },
+    "tokens": 1446
   },
   {
     "chunk_id": "doc05_test10_chunk023",
@@ -9174,7 +9196,8 @@
     ],
     "metadata": {
       "h2": "3.8 NLI"
-    }
+    },
+    "tokens": 410
   },
   {
     "chunk_id": "doc05_test10_chunk024",
@@ -9573,7 +9596,8 @@
     ],
     "metadata": {
       "h2": "3.9 Synthetic and Qualitative Tasks"
-    }
+    },
+    "tokens": 191
   },
   {
     "chunk_id": "doc05_test10_chunk025",
@@ -9972,7 +9996,8 @@
     ],
     "metadata": {
       "h2": "3.9.1 Arithmetic"
-    }
+    },
+    "tokens": 1815
   },
   {
     "chunk_id": "doc05_test10_chunk026",
@@ -10371,7 +10396,8 @@
     ],
     "metadata": {
       "h2": "3.9.2 Word Scrambling and Manipulation Tasks"
-    }
+    },
+    "tokens": 849
   },
   {
     "chunk_id": "doc05_test10_chunk027",
@@ -10770,7 +10796,8 @@
     ],
     "metadata": {
       "h2": "3.9.3 SAT Analogies"
-    }
+    },
+    "tokens": 322
   },
   {
     "chunk_id": "doc05_test10_chunk028",
@@ -11169,7 +11196,8 @@
     ],
     "metadata": {
       "h2": "3.9.4 News Article Generation"
-    }
+    },
+    "tokens": 1729
   },
   {
     "chunk_id": "doc05_test10_chunk029",
@@ -11568,7 +11596,8 @@
     ],
     "metadata": {
       "h2": "3.9.5 Learning and Using Novel Words"
-    }
+    },
+    "tokens": 1876
   },
   {
     "chunk_id": "doc05_test10_chunk030",
@@ -11967,7 +11996,8 @@
     ],
     "metadata": {
       "h2": "3.9.6 Correcting English Grammar"
-    }
+    },
+    "tokens": 94
   },
   {
     "chunk_id": "doc05_test10_chunk031",
@@ -12366,7 +12396,8 @@
     ],
     "metadata": {
       "h2": "4 Measuring and Preventing Memorization Of Benchmarks"
-    }
+    },
+    "tokens": 3477
   },
   {
     "chunk_id": "doc05_test10_chunk032",
@@ -12765,7 +12796,8 @@
     ],
     "metadata": {
       "h2": "5 Limitations"
-    }
+    },
+    "tokens": 1552
   },
   {
     "chunk_id": "doc05_test10_chunk033",
@@ -13164,7 +13196,8 @@
     ],
     "metadata": {
       "h2": "6 Broader Impacts"
-    }
+    },
+    "tokens": 201
   },
   {
     "chunk_id": "doc05_test10_chunk034",
@@ -13563,7 +13596,8 @@
     ],
     "metadata": {
       "h2": "6.1 Misuse of Language Models"
-    }
+    },
+    "tokens": 98
   },
   {
     "chunk_id": "doc05_test10_chunk035",
@@ -13962,7 +13996,8 @@
     ],
     "metadata": {
       "h2": "6.1.1 Potential Misuse Applications"
-    }
+    },
+    "tokens": 134
   },
   {
     "chunk_id": "doc05_test10_chunk036",
@@ -14361,7 +14396,8 @@
     ],
     "metadata": {
       "h2": "6.1.2 Threat Actor Analysis"
-    }
+    },
+    "tokens": 302
   },
   {
     "chunk_id": "doc05_test10_chunk037",
@@ -14760,7 +14796,8 @@
     ],
     "metadata": {
       "h2": "6.1.3 External Incentive Structures"
-    }
+    },
+    "tokens": 301
   },
   {
     "chunk_id": "doc05_test10_chunk038",
@@ -15159,7 +15196,8 @@
     ],
     "metadata": {
       "h2": "6.2 Fairness, Bias, and Representation"
-    }
+    },
+    "tokens": 247
   },
   {
     "chunk_id": "doc05_test10_chunk039",
@@ -15558,7 +15596,8 @@
     ],
     "metadata": {
       "h2": "6.2.1 Gender"
-    }
+    },
+    "tokens": 1254
   },
   {
     "chunk_id": "doc05_test10_chunk040",
@@ -15957,7 +15996,8 @@
     ],
     "metadata": {
       "h2": "6.2.2 Race"
-    }
+    },
+    "tokens": 854
   },
   {
     "chunk_id": "doc05_test10_chunk041",
@@ -16356,7 +16396,8 @@
     ],
     "metadata": {
       "h2": "6.2.3 Religion"
-    }
+    },
+    "tokens": 599
   },
   {
     "chunk_id": "doc05_test10_chunk042",
@@ -16755,7 +16796,8 @@
     ],
     "metadata": {
       "h2": "6.2.4 Future Bias and Fairness Challenges"
-    }
+    },
+    "tokens": 312
   },
   {
     "chunk_id": "doc05_test10_chunk043",
@@ -17154,7 +17196,8 @@
     ],
     "metadata": {
       "h2": "6.3 Energy Usage"
-    }
+    },
+    "tokens": 309
   },
   {
     "chunk_id": "doc05_test10_chunk044",
@@ -17553,7 +17596,8 @@
     ],
     "metadata": {
       "h2": "7 Related Work"
-    }
+    },
+    "tokens": 1610
   },
   {
     "chunk_id": "doc05_test10_chunk045",
@@ -17952,7 +17996,8 @@
     ],
     "metadata": {
       "h2": "8 Conclusion"
-    }
+    },
+    "tokens": 124
   },
   {
     "chunk_id": "doc05_test10_chunk046",
@@ -18351,7 +18396,8 @@
     ],
     "metadata": {
       "h2": "Acknowledgements"
-    }
+    },
+    "tokens": 222
   },
   {
     "chunk_id": "doc05_test10_chunk047",
@@ -18750,7 +18796,8 @@
     ],
     "metadata": {
       "h2": "Contributions"
-    }
+    },
+    "tokens": 687
   },
   {
     "chunk_id": "doc05_test10_chunk048",
@@ -19149,7 +19196,8 @@
     ],
     "metadata": {
       "h2": "A Details of Common Crawl Filtering"
-    }
+    },
+    "tokens": 398
   },
   {
     "chunk_id": "doc05_test10_chunk049",
@@ -19548,7 +19596,8 @@
     ],
     "metadata": {
       "h2": "B Details of Model Training"
-    }
+    },
+    "tokens": 301
   },
   {
     "chunk_id": "doc05_test10_chunk050",
@@ -19947,7 +19996,8 @@
     ],
     "metadata": {
       "h2": "C Details of Test Set Contamination Studies"
-    }
+    },
+    "tokens": 3709
   },
   {
     "chunk_id": "doc05_test10_chunk051",
@@ -20346,7 +20396,8 @@
     ],
     "metadata": {
       "h2": "D Total Compute Used to Train Language Models"
-    }
+    },
+    "tokens": 1298
   },
   {
     "chunk_id": "doc05_test10_chunk052",
@@ -20745,7 +20796,8 @@
     ],
     "metadata": {
       "h2": "E Human Quality Assessment of Synthetic News Articles"
-    }
+    },
+    "tokens": 776
   },
   {
     "chunk_id": "doc05_test10_chunk053",
@@ -21144,7 +21196,8 @@
     ],
     "metadata": {
       "h2": "Average time spent trying to detect model generated news article"
-    }
+    },
+    "tokens": 723
   },
   {
     "chunk_id": "doc05_test10_chunk054",
@@ -21543,7 +21596,8 @@
     ],
     "metadata": {
       "h2": "F Additional Samples from GPT-3"
-    }
+    },
+    "tokens": 1658
   },
   {
     "chunk_id": "doc05_test10_chunk055",
@@ -21942,7 +21996,8 @@
     ],
     "metadata": {
       "h2": "G Details of Task Phrasing and Specifications"
-    }
+    },
+    "tokens": 7353
   },
   {
     "chunk_id": "doc05_test10_chunk056",
@@ -22341,7 +22396,8 @@
     ],
     "metadata": {
       "h2": "H Results on All Tasks for All Model Sizes"
-    }
+    },
+    "tokens": 8612
   },
   {
     "chunk_id": "doc05_test10_chunk057",
@@ -22740,6 +22796,7 @@
     ],
     "metadata": {
       "h2": "References"
-    }
+    },
+    "tokens": 8326
   }
 ]

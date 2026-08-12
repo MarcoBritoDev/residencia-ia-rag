@@ -394,7 +394,8 @@
       0.070461,
       -0.023004
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 511
   },
   {
     "chunk_id": "doc01_test04_chunk002",
@@ -791,7 +792,8 @@
       0.101401,
       -0.002147
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 387
   },
   {
     "chunk_id": "doc01_test04_chunk003",
@@ -1188,7 +1190,8 @@
       0.122862,
       -0.000628
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 535
   },
   {
     "chunk_id": "doc01_test04_chunk004",
@@ -1585,7 +1588,8 @@
       0.094916,
       -0.036086
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 565
   },
   {
     "chunk_id": "doc01_test04_chunk005",
@@ -1982,7 +1986,8 @@
       0.069987,
       0.012835
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 551
   },
   {
     "chunk_id": "doc01_test04_chunk006",
@@ -2379,7 +2384,8 @@
       0.094433,
       0.03482
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 552
   },
   {
     "chunk_id": "doc01_test04_chunk007",
@@ -2776,7 +2782,8 @@
       0.072559,
       -0.001462
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 581
   },
   {
     "chunk_id": "doc01_test04_chunk008",
@@ -3173,7 +3180,8 @@
       0.12503,
       -0.053738
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 565
   },
   {
     "chunk_id": "doc01_test04_chunk009",
@@ -3570,7 +3578,8 @@
       0.066629,
       -0.02263
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 546
   },
   {
     "chunk_id": "doc01_test04_chunk010",
@@ -3967,7 +3976,8 @@
       0.093463,
       -0.02563
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 577
   },
   {
     "chunk_id": "doc01_test04_chunk011",
@@ -4364,7 +4374,8 @@
       0.068295,
       -0.021111
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 567
   },
   {
     "chunk_id": "doc01_test04_chunk012",
@@ -4761,7 +4772,8 @@
       0.128843,
       -0.038961
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 575
   },
   {
     "chunk_id": "doc01_test04_chunk013",
@@ -5158,7 +5170,8 @@
       0.083705,
       0.004285
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 540
   },
   {
     "chunk_id": "doc01_test04_chunk014",
@@ -5555,7 +5568,8 @@
       0.129668,
       0.00481
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 555
   },
   {
     "chunk_id": "doc01_test04_chunk015",
@@ -5952,7 +5966,8 @@
       0.043088,
       0.006527
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 516
   },
   {
     "chunk_id": "doc01_test04_chunk016",
@@ -6349,7 +6364,8 @@
       0.138857,
       -0.045185
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 580
   },
   {
     "chunk_id": "doc01_test04_chunk017",
@@ -6746,7 +6762,8 @@
       0.043913,
       -0.037691
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 575
   },
   {
     "chunk_id": "doc01_test04_chunk018",
@@ -7143,7 +7160,8 @@
       0.125513,
       0.006713
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 573
   },
   {
     "chunk_id": "doc01_test04_chunk019",
@@ -7540,7 +7558,8 @@
       0.103434,
       -0.024887
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 541
   },
   {
     "chunk_id": "doc01_test04_chunk020",
@@ -7937,7 +7956,8 @@
       0.055111,
       -0.046291
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 558
   },
   {
     "chunk_id": "doc01_test04_chunk021",
@@ -8334,7 +8354,8 @@
       0.08316,
       -0.009283
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 573
   },
   {
     "chunk_id": "doc01_test04_chunk022",
@@ -8731,7 +8752,8 @@
       -0.099996,
       0.009799
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 600
   },
   {
     "chunk_id": "doc01_test04_chunk023",
@@ -9128,7 +9150,8 @@
       0.031603,
       0.039693
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 640
   },
   {
     "chunk_id": "doc01_test04_chunk024",
@@ -9525,7 +9548,8 @@
       -0.026492,
       0.055904
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 719
   },
   {
     "chunk_id": "doc01_test04_chunk025",
@@ -9922,7 +9946,8 @@
       -0.107194,
       0.017246
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 694
   },
   {
     "chunk_id": "doc01_test04_chunk026",
@@ -10319,6 +10344,7 @@
       -0.114517,
       0.047533
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 251
   }
 ]

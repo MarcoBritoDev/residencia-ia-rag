@@ -394,7 +394,8 @@
       0.048586,
       0.051346
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 5
   },
   {
     "chunk_id": "doc01_test10_chunk002",
@@ -793,7 +794,8 @@
     ],
     "metadata": {
       "h2": "Entre o algoritmo e o Juramento de Hipócrates: bioética na era da inteligência artificial"
-    }
+    },
+    "tokens": 41
   },
   {
     "chunk_id": "doc01_test10_chunk003",
@@ -1192,7 +1194,8 @@
     ],
     "metadata": {
       "h2": "Resumo"
-    }
+    },
+    "tokens": 298
   },
   {
     "chunk_id": "doc01_test10_chunk004",
@@ -1591,7 +1594,8 @@
     ],
     "metadata": {
       "h2": "Entre el algoritmo y el Juramento Hipocrático: bioética en la era de la inteligencia artificial"
-    }
+    },
+    "tokens": 305
   },
   {
     "chunk_id": "doc01_test10_chunk005",
@@ -1990,7 +1994,8 @@
     ],
     "metadata": {
       "h2": "Between the algorithm and the Hippocratic Oath: bioethics in the age of artificial intelligence"
-    }
+    },
+    "tokens": 1773
   },
   {
     "chunk_id": "doc01_test10_chunk006",
@@ -2389,7 +2394,8 @@
     ],
     "metadata": {
       "h2": "Método"
-    }
+    },
+    "tokens": 816
   },
   {
     "chunk_id": "doc01_test10_chunk007",
@@ -2788,7 +2794,8 @@
     ],
     "metadata": {
       "h2": "A ética médica entre Hipócrates e a era digital"
-    }
+    },
+    "tokens": 848
   },
   {
     "chunk_id": "doc01_test10_chunk008",
@@ -3187,7 +3194,8 @@
     ],
     "metadata": {
       "h2": "Autonomia e opacidade algorítmica"
-    }
+    },
+    "tokens": 719
   },
   {
     "chunk_id": "doc01_test10_chunk009",
@@ -3586,7 +3594,8 @@
     ],
     "metadata": {
       "h2": "Beneficência e risco de viés algorítmico"
-    }
+    },
+    "tokens": 734
   },
   {
     "chunk_id": "doc01_test10_chunk010",
@@ -3985,7 +3994,8 @@
     ],
     "metadata": {
       "h2": "Não maleficência e danos invisíveis"
-    }
+    },
+    "tokens": 845
   },
   {
     "chunk_id": "doc01_test10_chunk011",
@@ -4384,7 +4394,8 @@
     ],
     "metadata": {
       "h2": "Justiça, equidade e o acesso digital à IA em saúde"
-    }
+    },
+    "tokens": 632
   },
   {
     "chunk_id": "doc01_test10_chunk012",
@@ -4783,7 +4794,8 @@
     ],
     "metadata": {
       "h2": "Confidencialidade, LGPD e a nova ética da privacidade"
-    }
+    },
+    "tokens": 801
   },
   {
     "chunk_id": "doc01_test10_chunk013",
@@ -5182,7 +5194,8 @@
     ],
     "metadata": {
       "h2": "Responsabilidade moral e accountability em sistemas híbridos"
-    }
+    },
+    "tokens": 633
   },
   {
     "chunk_id": "doc01_test10_chunk014",
@@ -5581,7 +5594,8 @@
     ],
     "metadata": {
       "h2": "Crise da relação médico-paciente na era algorítmica"
-    }
+    },
+    "tokens": 801
   },
   {
     "chunk_id": "doc01_test10_chunk015",
@@ -5980,7 +5994,8 @@
     ],
     "metadata": {
       "h2": "Reinterpretação dos princípios hipocráticos no século XXI"
-    }
+    },
+    "tokens": 484
   },
   {
     "chunk_id": "doc01_test10_chunk016",
@@ -6379,7 +6394,8 @@
     ],
     "metadata": {
       "h2": "Propostas bioéticas para uma IA centrada no paciente"
-    }
+    },
+    "tokens": 360
   },
   {
     "chunk_id": "doc01_test10_chunk017",
@@ -6778,7 +6794,8 @@
     ],
     "metadata": {
       "h2": "Limitações da literatura atual e lacunas para pesquisa futura"
-    }
+    },
+    "tokens": 478
   },
   {
     "chunk_id": "doc01_test10_chunk018",
@@ -7177,7 +7194,8 @@
     ],
     "metadata": {
       "h2": "Considerações finais"
-    }
+    },
+    "tokens": 481
   },
   {
     "chunk_id": "doc01_test10_chunk019",
@@ -7576,7 +7594,8 @@
     ],
     "metadata": {
       "h2": "Referências"
-    }
+    },
+    "tokens": 2820
   },
   {
     "chunk_id": "doc01_test10_chunk020",
@@ -7975,7 +7994,8 @@
     ],
     "metadata": {
       "h2": "Juracy Barbosa dos SantosDoutorando - drjuracybarbosa@gmail.com"
-    }
+    },
+    "tokens": 82
   },
   {
     "chunk_id": "doc01_test10_chunk021",
@@ -8374,7 +8394,8 @@
     ],
     "metadata": {
       "h2": "Correspondência"
-    }
+    },
+    "tokens": 37
   },
   {
     "chunk_id": "doc01_test10_chunk022",
@@ -8773,6 +8794,7 @@
     ],
     "metadata": {
       "h2": "Contribuição dos autores"
-    }
+    },
+    "tokens": 158
   }
 ]

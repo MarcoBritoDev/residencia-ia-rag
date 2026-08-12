@@ -396,7 +396,8 @@
     ],
     "metadata": {
       "h2": "Escrita acadêmica ética, responsável e humana com inteligência artificial"
-    }
+    },
+    "tokens": 12
   },
   {
     "chunk_id": "doc02_test10_chunk002",
@@ -795,7 +796,8 @@
     ],
     "metadata": {
       "h2": "I ✉"
-    }
+    },
+    "tokens": 630
   },
   {
     "chunk_id": "doc02_test10_chunk003",
@@ -1194,7 +1196,8 @@
     ],
     "metadata": {
       "h2": "I. Introdução"
-    }
+    },
+    "tokens": 1262
   },
   {
     "chunk_id": "doc02_test10_chunk004",
@@ -1593,7 +1596,8 @@
     ],
     "metadata": {
       "h2": "II. Guia prático para uso ético, responsável e humano da IA generativa na escrita acadêmica"
-    }
+    },
+    "tokens": 438
   },
   {
     "chunk_id": "doc02_test10_chunk005",
@@ -1992,7 +1996,8 @@
     ],
     "metadata": {
       "h2": "II.1. Fase 1: planejamento humano para o uso de IA"
-    }
+    },
+    "tokens": 1655
   },
   {
     "chunk_id": "doc02_test10_chunk006",
@@ -2391,7 +2396,8 @@
     ],
     "metadata": {
       "h2": "II.2. Fase 2: geração de insumos, curadoria crítica e refinamento iterativo"
-    }
+    },
+    "tokens": 1257
   },
   {
     "chunk_id": "doc02_test10_chunk007",
@@ -2790,7 +2796,8 @@
     ],
     "metadata": {
       "h2": "II.3. Fase 3: apropriação e reescrita autoral"
-    }
+    },
+    "tokens": 653
   },
   {
     "chunk_id": "doc02_test10_chunk008",
@@ -3189,7 +3196,8 @@
     ],
     "metadata": {
       "h2": "II.4. Fase 4: verificação rigorosa de fatos e fontes"
-    }
+    },
+    "tokens": 639
   },
   {
     "chunk_id": "doc02_test10_chunk009",
@@ -3588,7 +3596,8 @@
     ],
     "metadata": {
       "h2": "II.5. Fase 5: responsabilidade final e transparência"
-    }
+    },
+    "tokens": 840
   },
   {
     "chunk_id": "doc02_test10_chunk010",
@@ -3987,7 +3996,8 @@
     ],
     "metadata": {
       "h2": "III. Refletindo sobre o processo de escrita com IA"
-    }
+    },
+    "tokens": 1095
   },
   {
     "chunk_id": "doc02_test10_chunk011",
@@ -4386,7 +4396,8 @@
     ],
     "metadata": {
       "h2": "Conflito de interesses"
-    }
+    },
+    "tokens": 291
   },
   {
     "chunk_id": "doc02_test10_chunk012",
@@ -4785,7 +4796,8 @@
     ],
     "metadata": {
       "h2": "Contribuição de autoria (CRediT)"
-    }
+    },
+    "tokens": 64
   },
   {
     "chunk_id": "doc02_test10_chunk013",
@@ -5184,7 +5196,8 @@
     ],
     "metadata": {
       "h2": "Declaração de disponibilidade de dados"
-    }
+    },
+    "tokens": 111
   },
   {
     "chunk_id": "doc02_test10_chunk014",
@@ -5583,7 +5596,8 @@
     ],
     "metadata": {
       "h2": "ReferênciasBai, S., Gonda, D.E. &amp; Hew, K.F. (2024) Write-curate-verify: a case study of leveraging generative AI for scenario writing in scenario-based learning. IEEE Transactions on Learning Technologies , 17, pp. 1301-1312. DOIFloridi, L. (2025) Distant writing: Literary production in the age of artificial intelligence. Minds and Machines , 35(3), 30. DOIJin, F., Sun, L. &amp; Pan, Y., et al. (2025) High heels, compass, spider-man, or drug? Metaphor analysis of generative artificial intelligence in academic writing. Computers &amp; Education , 228, 105248. DOILee, H., Sarkar, A. &amp; Tankelevitch, L., et al. (2025) The impact of generative AI on critical thinking: self-reported reductions in cognitive effort and confidence effects from a survey of knowledge workers. Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems. Yokohama, Japão. DOILopes, C., Forgas, R.C. &amp; Cerdà-Navarr, A. (2024) Tese de doutorado em educação escrita por inteligência artificial? Revista Brasileira de Educação , 29, e290065. DOIMei, P., Brewis, D. &amp; Nwaiwu, F., et al. (2025) If ChatGPT can do it, where is my creativity? Generative AI boosts performance but diminishes experience in creative writing. Computers in Human Behavior: Artificial Humans , 4, 100140. DOIMollick, E.R. &amp; Mollick, L. (2024) Instructors as innovators: a future-focused approach to new AI learning opportunities, with prompts. SSRN Electronic Journal [Preprint]. DOIPereira, R., Reis, I.W. &amp; Ulbricht, V., et al. (2024) Generative artificial intelligence and academic writing: an analysis of the perceptions of researchers in training. Management Research: Journal of the Iberoamerican Academy of Management , 22(4), pp. 429-450. DOIResnik, D. &amp; Hosseini, M. (2025) Disclosing artificial intelligence use in scientific research and publication: when should disclosure be mandatory, optional, or unnecessary? Accountability in Research , 2025, pp. 1-13. DOISampaio, R. &amp; Figueiredo, D. (2025) Prompts (infalíveis!) para pesquisa acadêmica com inteligência artificial. Teresina: EDUFPI."
-    }
+    },
+    "tokens": 277
   },
   {
     "chunk_id": "doc02_test10_chunk015",
@@ -5982,7 +5996,8 @@
     ],
     "metadata": {
       "h2": "Recursos de internet"
-    }
+    },
+    "tokens": 31
   },
   {
     "chunk_id": "doc02_test10_chunk016",
@@ -6381,7 +6396,8 @@
     ],
     "metadata": {
       "h2": "Towards ethical, responsible, and human-centered academic writing with AI"
-    }
+    },
+    "tokens": 394
   },
   {
     "chunk_id": "doc02_test10_chunk017",
@@ -6780,6 +6796,7 @@
     ],
     "metadata": {
       "h2": "ApêndiceFigura 1Opções presentes no Gemini acessado diretamente do Google Docs."
-    }
+    },
+    "tokens": 491
   }
 ]

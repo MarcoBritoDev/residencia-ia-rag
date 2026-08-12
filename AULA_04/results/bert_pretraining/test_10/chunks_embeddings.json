@@ -396,7 +396,8 @@
     ],
     "metadata": {
       "h2": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
-    }
+    },
+    "tokens": 39
   },
   {
     "chunk_id": "doc02_test10_chunk002",
@@ -795,7 +796,8 @@
     ],
     "metadata": {
       "h2": "Abstract"
-    }
+    },
+    "tokens": 248
   },
   {
     "chunk_id": "doc02_test10_chunk003",
@@ -1194,7 +1196,8 @@
     ],
     "metadata": {
       "h2": "1 Introduction"
-    }
+    },
+    "tokens": 805
   },
   {
     "chunk_id": "doc02_test10_chunk004",
@@ -1593,7 +1596,8 @@
     ],
     "metadata": {
       "h2": "2 Related Work"
-    }
+    },
+    "tokens": 25
   },
   {
     "chunk_id": "doc02_test10_chunk005",
@@ -1992,7 +1996,8 @@
     ],
     "metadata": {
       "h2": "2.1 Unsupervised Feature-based Approaches"
-    }
+    },
+    "tokens": 522
   },
   {
     "chunk_id": "doc02_test10_chunk006",
@@ -2391,7 +2396,8 @@
     ],
     "metadata": {
       "h2": "2.2 Unsupervised Fine-tuning Approaches"
-    }
+    },
+    "tokens": 306
   },
   {
     "chunk_id": "doc02_test10_chunk007",
@@ -2790,7 +2796,8 @@
     ],
     "metadata": {
       "h2": "2.3 Transfer Learning from Supervised Data"
-    }
+    },
+    "tokens": 95
   },
   {
     "chunk_id": "doc02_test10_chunk008",
@@ -3189,7 +3196,8 @@
     ],
     "metadata": {
       "h2": "3 BERT"
-    }
+    },
+    "tokens": 809
   },
   {
     "chunk_id": "doc02_test10_chunk009",
@@ -3588,7 +3596,8 @@
     ],
     "metadata": {
       "h2": "3.1 Pre-training BERT"
-    }
+    },
+    "tokens": 976
   },
   {
     "chunk_id": "doc02_test10_chunk010",
@@ -3987,7 +3996,8 @@
     ],
     "metadata": {
       "h2": "3.2 Fine-tuning BERT"
-    }
+    },
+    "tokens": 342
   },
   {
     "chunk_id": "doc02_test10_chunk011",
@@ -4386,7 +4396,8 @@
     ],
     "metadata": {
       "h2": "4 Experiments"
-    }
+    },
+    "tokens": 19
   },
   {
     "chunk_id": "doc02_test10_chunk012",
@@ -4785,7 +4796,8 @@
     ],
     "metadata": {
       "h2": "4.1 GLUE"
-    }
+    },
+    "tokens": 1096
   },
   {
     "chunk_id": "doc02_test10_chunk013",
@@ -5184,7 +5196,8 @@
     ],
     "metadata": {
       "h2": "4.2 SQuAD v1.1"
-    }
+    },
+    "tokens": 1379
   },
   {
     "chunk_id": "doc02_test10_chunk014",
@@ -5583,7 +5596,8 @@
     ],
     "metadata": {
       "h2": "4.3 SQuAD v2.0"
-    }
+    },
+    "tokens": 521
   },
   {
     "chunk_id": "doc02_test10_chunk015",
@@ -5982,7 +5996,8 @@
     ],
     "metadata": {
       "h2": "4.4 SWAG"
-    }
+    },
+    "tokens": 199
   },
   {
     "chunk_id": "doc02_test10_chunk016",
@@ -6381,7 +6396,8 @@
     ],
     "metadata": {
       "h2": "5 Ablation Studies"
-    }
+    },
+    "tokens": 352
   },
   {
     "chunk_id": "doc02_test10_chunk017",
@@ -6780,7 +6796,8 @@
     ],
     "metadata": {
       "h2": "5.1 Effect of Pre-training Tasks"
-    }
+    },
+    "tokens": 487
   },
   {
     "chunk_id": "doc02_test10_chunk018",
@@ -7179,7 +7196,8 @@
     ],
     "metadata": {
       "h2": "5.2 Effect of Model Size"
-    }
+    },
+    "tokens": 489
   },
   {
     "chunk_id": "doc02_test10_chunk019",
@@ -7578,7 +7596,8 @@
     ],
     "metadata": {
       "h2": "5.3 Feature-based Approach with BERT"
-    }
+    },
+    "tokens": 1046
   },
   {
     "chunk_id": "doc02_test10_chunk020",
@@ -7977,7 +7996,8 @@
     ],
     "metadata": {
       "h2": "6 Conclusion"
-    }
+    },
+    "tokens": 81
   },
   {
     "chunk_id": "doc02_test10_chunk021",
@@ -8376,7 +8396,8 @@
     ],
     "metadata": {
       "h2": "ReferencesAlan Akbik, Duncan Blythe, and Roland Vollgraf. 2018. Contextual string embeddings for sequence labeling. In Proceedings of the 27th International Conference on Computational Linguistics , pages 1638-1649."
-    }
+    },
+    "tokens": 2914
   },
   {
     "chunk_id": "doc02_test10_chunk022",
@@ -8775,7 +8796,8 @@
     ],
     "metadata": {
       "h2": "Appendix for 'BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding'"
-    }
+    },
+    "tokens": 80
   },
   {
     "chunk_id": "doc02_test10_chunk023",
@@ -9174,7 +9196,8 @@
     ],
     "metadata": {
       "h2": "A.1 Illustration of the Pre-training Tasks"
-    }
+    },
+    "tokens": 540
   },
   {
     "chunk_id": "doc02_test10_chunk024",
@@ -9573,7 +9596,8 @@
     ],
     "metadata": {
       "h2": "A.2 Pre-training Procedure"
-    }
+    },
+    "tokens": 450
   },
   {
     "chunk_id": "doc02_test10_chunk025",
@@ -9972,7 +9996,8 @@
     ],
     "metadata": {
       "h2": "A.3 Fine-tuning Procedure"
-    }
+    },
+    "tokens": 213
   },
   {
     "chunk_id": "doc02_test10_chunk026",
@@ -10371,7 +10396,8 @@
     ],
     "metadata": {
       "h2": "A.4 Comparison of BERT, ELMo ,and OpenAI GPT"
-    }
+    },
+    "tokens": 407
   },
   {
     "chunk_id": "doc02_test10_chunk027",
@@ -10770,7 +10796,8 @@
     ],
     "metadata": {
       "h2": "A.5 Illustrations of Fine-tuning on Different Tasks"
-    }
+    },
+    "tokens": 123
   },
   {
     "chunk_id": "doc02_test10_chunk028",
@@ -11169,7 +11196,8 @@
     ],
     "metadata": {
       "h2": "B.1 Detailed Descriptions for the GLUE Benchmark Experiments."
-    }
+    },
+    "tokens": 672
   },
   {
     "chunk_id": "doc02_test10_chunk029",
@@ -11568,7 +11596,8 @@
     ],
     "metadata": {
       "h2": "C.1 Effect of Number of Training Steps"
-    }
+    },
+    "tokens": 179
   },
   {
     "chunk_id": "doc02_test10_chunk030",
@@ -11967,6 +11996,7 @@
     ],
     "metadata": {
       "h2": "C.2 Ablation for Different Masking Procedures"
-    }
+    },
+    "tokens": 701
   }
 ]

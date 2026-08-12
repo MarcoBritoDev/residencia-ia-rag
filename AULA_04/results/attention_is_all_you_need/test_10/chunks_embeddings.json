@@ -394,7 +394,8 @@
       0.244314,
       0.031973
     ],
-    "metadata": {}
+    "metadata": {},
+    "tokens": 29
   },
   {
     "chunk_id": "doc01_test10_chunk002",
@@ -793,7 +794,8 @@
     ],
     "metadata": {
       "h2": "Attention Is All You Need"
-    }
+    },
+    "tokens": 126
   },
   {
     "chunk_id": "doc01_test10_chunk003",
@@ -1192,7 +1194,8 @@
     ],
     "metadata": {
       "h2": "Abstract"
-    }
+    },
+    "tokens": 408
   },
   {
     "chunk_id": "doc01_test10_chunk004",
@@ -1591,7 +1594,8 @@
     ],
     "metadata": {
       "h2": "1 Introduction"
-    }
+    },
+    "tokens": 343
   },
   {
     "chunk_id": "doc01_test10_chunk005",
@@ -1990,7 +1994,8 @@
     ],
     "metadata": {
       "h2": "2 Background"
-    }
+    },
+    "tokens": 345
   },
   {
     "chunk_id": "doc01_test10_chunk006",
@@ -2389,7 +2394,8 @@
     ],
     "metadata": {
       "h2": "3 Model Architecture"
-    }
+    },
+    "tokens": 166
   },
   {
     "chunk_id": "doc01_test10_chunk007",
@@ -2788,7 +2794,8 @@
     ],
     "metadata": {
       "h2": "3.1 Encoder and Decoder Stacks"
-    }
+    },
+    "tokens": 276
   },
   {
     "chunk_id": "doc01_test10_chunk008",
@@ -3187,7 +3194,8 @@
     ],
     "metadata": {
       "h2": "3.2 Attention"
-    }
+    },
+    "tokens": 43
   },
   {
     "chunk_id": "doc01_test10_chunk009",
@@ -3586,7 +3594,8 @@
     ],
     "metadata": {
       "h2": "Scaled Dot-Product Attention"
-    }
+    },
+    "tokens": 64
   },
   {
     "chunk_id": "doc01_test10_chunk010",
@@ -3985,7 +3994,8 @@
     ],
     "metadata": {
       "h2": "3.2.1 Scaled Dot-Product Attention"
-    }
+    },
+    "tokens": 303
   },
   {
     "chunk_id": "doc01_test10_chunk011",
@@ -4384,7 +4394,8 @@
     ],
     "metadata": {
       "h2": "3.2.2 Multi-Head Attention"
-    }
+    },
+    "tokens": 316
   },
   {
     "chunk_id": "doc01_test10_chunk012",
@@ -4783,7 +4794,8 @@
     ],
     "metadata": {
       "h2": "3.2.3 Applications of Attention in our Model"
-    }
+    },
+    "tokens": 238
   },
   {
     "chunk_id": "doc01_test10_chunk013",
@@ -5182,7 +5194,8 @@
     ],
     "metadata": {
       "h2": "3.3 Position-wise Feed-Forward Networks"
-    }
+    },
+    "tokens": 122
   },
   {
     "chunk_id": "doc01_test10_chunk014",
@@ -5581,7 +5594,8 @@
     ],
     "metadata": {
       "h2": "3.4 Embeddings and Softmax"
-    }
+    },
+    "tokens": 300
   },
   {
     "chunk_id": "doc01_test10_chunk015",
@@ -5980,7 +5994,8 @@
     ],
     "metadata": {
       "h2": "3.5 Positional Encoding"
-    }
+    },
+    "tokens": 277
   },
   {
     "chunk_id": "doc01_test10_chunk016",
@@ -6379,7 +6394,8 @@
     ],
     "metadata": {
       "h2": "4 Why Self-Attention"
-    }
+    },
+    "tokens": 631
   },
   {
     "chunk_id": "doc01_test10_chunk017",
@@ -6778,7 +6794,8 @@
     ],
     "metadata": {
       "h2": "5 Training"
-    }
+    },
+    "tokens": 10
   },
   {
     "chunk_id": "doc01_test10_chunk018",
@@ -7177,7 +7194,8 @@
     ],
     "metadata": {
       "h2": "5.1 Training Data and Batching"
-    }
+    },
+    "tokens": 126
   },
   {
     "chunk_id": "doc01_test10_chunk019",
@@ -7576,7 +7594,8 @@
     ],
     "metadata": {
       "h2": "5.2 Hardware and Schedule"
-    }
+    },
+    "tokens": 100
   },
   {
     "chunk_id": "doc01_test10_chunk020",
@@ -7975,7 +7994,8 @@
     ],
     "metadata": {
       "h2": "5.3 Optimizer"
-    }
+    },
+    "tokens": 107
   },
   {
     "chunk_id": "doc01_test10_chunk021",
@@ -8374,7 +8394,8 @@
     ],
     "metadata": {
       "h2": "5.4 Regularization"
-    }
+    },
+    "tokens": 649
   },
   {
     "chunk_id": "doc01_test10_chunk022",
@@ -8773,7 +8794,8 @@
     ],
     "metadata": {
       "h2": "6.1 Machine Translation"
-    }
+    },
+    "tokens": 388
   },
   {
     "chunk_id": "doc01_test10_chunk023",
@@ -9172,7 +9194,8 @@
     ],
     "metadata": {
       "h2": "6.2 Model Variations"
-    }
+    },
+    "tokens": 1340
   },
   {
     "chunk_id": "doc01_test10_chunk024",
@@ -9571,7 +9594,8 @@
     ],
     "metadata": {
       "h2": "6.3 English Constituency Parsing"
-    }
+    },
+    "tokens": 710
   },
   {
     "chunk_id": "doc01_test10_chunk025",
@@ -9970,7 +9994,8 @@
     ],
     "metadata": {
       "h2": "7 Conclusion"
-    }
+    },
+    "tokens": 235
   },
   {
     "chunk_id": "doc01_test10_chunk026",
@@ -10369,7 +10394,8 @@
     ],
     "metadata": {
       "h2": "References"
-    }
+    },
+    "tokens": 2154
   },
   {
     "chunk_id": "doc01_test10_chunk027",
@@ -10768,6 +10794,7 @@
     ],
     "metadata": {
       "h2": "Attention Visualizations Input-Input Layer5"
-    }
+    },
+    "tokens": 225
   }
 ]
