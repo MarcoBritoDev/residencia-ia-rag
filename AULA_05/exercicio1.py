@@ -1,7 +1,6 @@
 from langchain_core.documents import Document
 
-# 5+ Documents criados manualmente, sobre temas do curso.
-# page_content = o texto; metadata = dados sobre o texto.
+
 documentos = [
     Document(
         page_content="Embeddings são representações vetoriais densas de texto, "
@@ -35,17 +34,16 @@ documentos = [
     ),
 ]
 
-# Entrega 2: print de page_content e metadata de cada documento
+
 for i, doc in enumerate(documentos, start=1):
     print(f"--- Documento {i} ---")
     print(f"  page_content: {doc.page_content}")
     print(f"  metadata:     {doc.metadata}\n")
 
-# Entrega 3: len da lista
+
 print(f"Total de documentos: {len(documentos)}")
 
 
-# --- Perguntas do exercício, testadas na prática ---
 print("\n" + "=" * 60)
 print("TESTE 1: metadata aceita lista ou dicionário aninhado?")
 print("=" * 60)
@@ -53,8 +51,8 @@ doc_complexo = Document(
     page_content="Teste de metadados complexos.",
     metadata={
         "fonte": "teste.md",
-        "temas_lista": ["embeddings", "chunking", "rag"],   # uma lista
-        "config": {"chunk_size": 500, "overlap": 50},        # dicionário aninhado
+        "temas_lista": ["embeddings", "chunking", "rag"],   
+        "config": {"chunk_size": 500, "overlap": 50},        
     },
 )
 print(f"  Criado com sucesso. metadata: {doc_complexo.metadata}")
