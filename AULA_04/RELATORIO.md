@@ -1,144 +1,484 @@
-# Relatório de Análise — Estratégias de Chunking (AULA_04)
+## [https://drive.google.com/drive/folders/1OvtUfbhoOjppGK9T\_pmH7bYsGbj2Tu9i?usp=sharing](https://drive.google.com/drive/folders/1OvtUfbhoOjppGK9T_pmH7bYsGbj2Tu9i?usp=sharing)
 
-**Residência em IA Generativa & RAG — Instituto ECOA / PUC-Rio**
+alternativa para modelo de embeddings:
+ [https://huggingface.co/blog/getting-started-with-embeddings](https://huggingface.co/blog/getting-started-with-embeddings)
 
-Análise comparativa de 10 estratégias de chunking sobre 12 documentos (3 artigos em
-português sobre ética em IA e 9 papers técnicos em inglês sobre LLMs/RAG), convertidos de PDF
-para Markdown com Docling e vetorizados com o modelo local
-`paraphrase-multilingual-MiniLM-L12-v2` (384 dimensões).
+# Avaliação de Estratégias de Chunking com LangChain
 
-*Este relatório é gerado automaticamente a partir de `results/summary.json`.
-As respostas 1, 2 e 3 são calculadas diretamente dos dados.*
+## Objetivo
 
-## Dados consolidados (12 documentos)
+Implementar e comparar **10 estratégias diferentes de divisão de documentos (chunking)** utilizando os splitters disponíveis no **LangChain**, gerando embeddings para cada chunk e salvando os resultados em arquivos JSON.
 
-| Teste | Estratégia | Total de chunks | Média (chars) | Mín | Máx |
-|------:|------------|----------------:|--------------:|----:|----:|
-| 1 | Fixo, 200 caracteres, sem overlap | 7269 | 194.0 | 1 | 200 |
-| 2 | Fixo, 500 caracteres, sem overlap | 2971 | 486.9 | 1 | 500 |
-| 3 | Fixo, 1000 caracteres, sem overlap | 1491 | 982.0 | 29 | 1000 |
-| 4 | Fixo, 2000 caracteres, sem overlap | 748 | 1963.6 | 198 | 2000 |
-| 5 | Fixo, 500, overlap 50 (10%) | 3294 | 488.1 | 1 | 500 |
-| 6 | Fixo, 500, overlap 200 (40%) | 4938 | 488.5 | 1 | 500 |
-| 7 | Por parágrafo | 3996 | 383.9 | 1 | 40445 |
-| 8 | Por sentença (grupos de 3) | 3718 | 383.8 | 5 | 24787 |
-| 9 | Recursivo (separadores hierárquicos) | 2041 | 735.2 | 1 | 999 |
-| 10 | Por seção / heading Markdown | 659 | 2416.9 | 11 | 52313 |
+O objetivo é avaliar como diferentes estratégias de chunking influenciam:
+
+- quantidade de chunks gerados;
+- tamanho dos chunks;
+- preservação do contexto;
+- sobreposição entre chunks;
+- representação semântica dos documentos;
+- qualidade da estrutura resultante para utilização posterior em sistemas de RAG.
+
+Documentação de referência:
+
+[https://docs.langchain.com/oss/python/integrations/splitters](https://docs.langchain.com/oss/python/integrations/splitters)
 
 ---
 
-## Respostas
+# 1. Base de documentos
 
-### 1. Qual estratégia gerou mais chunks?
-**Teste 1 (Fixo, 200 caracteres, sem overlap)**, com **7269 chunks** — o maior total.
-Por ter o menor tamanho de chunk, divide o mesmo texto em mais pedaços.
+Utilizar **todos os documentos PDF disponíveis na pasta do Google Drive**:
 
-### 2. Qual gerou menos chunks?
-**Teste 10 (Por seção / heading Markdown)**, com **659 chunks** — o menor total.
-Divide o documento apenas nos cabeçalhos; como muitos documentos têm poucas seções, cada chunk
-vira uma seção inteira e grande.
+[https://drive.google.com/drive/folders/1OvtUfbhoOjppGK9T\_pmH7bYsGbj2Tu9i](https://drive.google.com/drive/folders/1OvtUfbhoOjppGK9T_pmH7bYsGbj2Tu9i)
 
-### 3. Como o tamanho dos chunks variou?
-Nas estratégias de tamanho fixo, a variação foi **controlada**: a média acompanhou o alvo
-(194.0, 486.9, 982.0 e
-1963.6 caracteres para os alvos 200/500/1000/2000) e o máximo respeitou o
-limite. Dobrar o tamanho reduziu o número de chunks pela metade
-(7269 → 2971 → 1491 → 748).
+Para cada PDF, o pipeline deverá executar as etapas:
 
-Já as estratégias baseadas em estrutura variaram de forma **descontrolada**: máximos de
-**40445** (parágrafo), **24787** (sentença) e **52313** (markdown) caracteres, contra
-mínimos de 1 a 11 — o tamanho depende inteiramente da formatação do documento.
+```
+PDF
+ ↓
+Extração do conteúdo
+ ↓
+Markdown
+ ↓
+Chunking
+ ↓
+Embeddings
+ ↓
+JSON
 
-### 4. Qual estratégia preservou melhor a estrutura dos documentos?
-O **Teste 10 (Markdown por heading)** — única a registrar a hierarquia semântica
-(título → seção → subseção) nos metadados de cada chunk (`h1`, `h2`, `h3`). O Recursivo (Teste 9)
-vem em segundo por respeitar fronteiras de parágrafo e frase, sem porém registrar a hierarquia.
+```
 
-### 5. Como tabelas foram tratadas?
-O Docling converteu tabelas para a **sintaxe de tabela do Markdown** (linhas com `|`,
-cabeçalho e linha separadora `|---|`). O resultado depende da complexidade da tabela:
-**tabelas simples foram bem preservadas** — por exemplo, a tabela de resultados GLUE do paper
-do BERT manteve cabeçalho, colunas e valores alinhados e legíveis. Já **tabelas complexas**
-(com células mescladas ou cabeçalhos em dois níveis) foram **degradadas**: os cabeçalhos
-aparecem duplicados e desalinhados, quebrando a estrutura. Além disso, quando uma tabela cai
-no meio de um chunk de tamanho fixo, ela é **cortada** — parte fica num chunk, parte em outro.
-
-### 6. Como imagens foram tratadas?
-As imagens **não são extraídas como conteúdo** — o Docling insere um marcador `<!-- image -->`
-no lugar onde a figura estava, sem OCR do texto interno nem descrição. Foi confirmado nos
-markdowns (ex.: três marcadores no paper *Attention Is All You Need*, correspondentes aos
-diagramas da arquitetura). Todo o conteúdo visual (gráficos, diagramas, fórmulas renderizadas
-como imagem) é **perdido** para a busca semântica: o embedding de um chunk com `<!-- image -->`
-não representa nada do que a figura mostrava.
-
-### 7. Quais informações foram perdidas durante a conversão PDF → Markdown?
-Perdas identificadas: conteúdo das **imagens** (viram marcadores, sem OCR nem descrição);
-**numeração de páginas** (o markdown é texto corrido); formatação de **tabelas complexas**;
-**fórmulas matemáticas** (viram texto quebrado ou símbolos soltos nos papers); e artefatos de
-**hifenização** de fim de linha, parcialmente corrigidos na limpeza. A presença de chunks de
-**1 caractere** (coluna Mín) evidencia resíduos da conversão.
-
-### 8. O chunking por caracteres fragmentou conceitos ou estruturas importantes?
-Sim. O corte por número fixo de caracteres é **cego ao conteúdo** — corta no meio de palavras,
-frases e tabelas. É mais grave no Teste 1 (200 caracteres), onde a fragmentação é máxima. Chunks
-fixos maiores (1000, 2000) cortam menos, mas diluem a relevância (mais assuntos por chunk).
-
-### 9. O chunking por parágrafo produziu chunks muito grandes?
-Sim, em casos extremos. A média ficou moderada (383.9 caracteres), mas o
-**maior** chunk chegou a **40445** caracteres — quando um documento tem um parágrafo enorme sem
-quebra dupla. O tamanho é **imprevisível**, dependente da formatação de origem.
-
-### 10. O chunking por sentença conseguiu preservar melhor o contexto?
-Parcialmente. Agrupar 3 sentenças mantém o **fluxo local** entre frases relacionadas (bom para
-texto explicativo), mas o tamanho é **variável** (máximo de **24787** caracteres), pois a
-segmentação falha com pontuação irregular, abreviações e fórmulas. Preserva contexto melhor que
-o corte cego, sem garantia de tamanho.
-
-### 11. O Recursive Splitter apresentou vantagens?
-Sim — a estratégia mais **equilibrada**. Divide primeiro por parágrafo, depois frase, depois
-palavra, cortando no caractere só em último caso. Resultado: respeita fronteiras naturais **e**
-mantém o tamanho sob controle (máximo de 999 caracteres). Combina a
-previsibilidade do fixo com o respeito à estrutura — padrão recomendado para RAG.
-
-### 12. O Markdown Splitter conseguiu preservar a estrutura semântica?
-Sim quanto à **hierarquia** (único a registrar seção/subseção nos metadados), mas falhou quanto
-ao **tamanho**: gerou o maior chunk da análise (**52313** caracteres). Numa base heterogênea
-(papers com poucos headings) isso é crítico — e como o modelo local processa apenas ~128 tokens
-(~500 caracteres), em um chunk de 52313 caracteres mais de 99% do conteúdo é ignorado ao gerar
-o embedding. Preserva estrutura, mas produz vetores pouco representativos.
-
-### 13. Qual estratégia parece mais adequada para um sistema de RAG?
-O **Teste 9 (Recursivo)** — melhor equilíbrio entre respeitar a estrutura e garantir teto de
-tamanho, mantendo os chunks na janela útil do modelo. Em segundo, o **Teste 5 (Fixo 500 +
-overlap 10%)**, como baseline simples e previsível.
-
-### 14. Quais estratégias devem ser descartadas?
-- **Teste 1 (Fixo 200):** fragmenta demais, corta conceitos.
-- **Teste 4 (Fixo 2000):** dilui relevância e ultrapassa a janela do modelo.
-- **Testes 7, 8 e 10 (parágrafo, sentença, markdown):** tamanho descontrolado (máximos de
-  40445, 24787 e 52313), inviável de vetorizar de forma representativa. O Teste 10 mantém
-  valor apenas pelos metadados de estrutura.
-
-### 15. Quais estratégias devem ser utilizadas nos próximos experimentos?
-Três, cobrindo os eixos relevantes:
-- **Teste 9 (Recursivo):** estratégia principal para RAG.
-- **Teste 5 (Fixo 500 + overlap 50):** baseline de comparação.
-- **Teste 6 (Fixo 500 + overlap 200):** para medir se o overlap pesado compensa a redundância
-  (gera 4938 chunks contra 2971 do Teste 2, pela
-  mesma cobertura de texto).
-
-Todas mantêm o tamanho **dentro da janela do modelo de embedding**, garantindo vetores
-representativos — condição que as descartadas não satisfazem.
+A implementação deverá ser capaz de processar todos os documentos da pasta de forma automatizada.
 
 ---
 
-## Conclusão geral
+# 2. Extração dos PDFs para Markdown
 
-O trade-off central do chunking é **controle de tamanho vs. respeito à estrutura**. Estratégias
-de tamanho fixo garantem previsibilidade mas ignoram o significado; as estruturais respeitam o
-significado mas perdem o controle do tamanho. O **chunking recursivo** melhor concilia os dois.
+Antes do processo de chunking, os PDFs deverão ser convertidos para **Markdown estruturado**.
 
-Dois fatores foram decisivos nesta base: a **heterogeneidade** dos documentos (PT + EN, artigos
-+ papers) penaliza as estratégias estruturais, que dependem de formatação consistente; e a
-**janela curta do modelo local** (~128 tokens) torna qualquer chunk grande pouco representativo,
-reforçando a preferência por teto de tamanho baixo e controlado.
+A extração deve preservar, sempre que possível:
+
+- títulos e headings;
+- parágrafos;
+- listas;
+- tabelas;
+- imagens;
+- legendas;
+- referências;
+- ordem dos elementos no documento;
+- informações de página.
+
+### Questão importante
+
+Durante a extração, deve ser avaliado **como cada tipo de conteúdo do PDF é representado no Markdown**.
+
+Especial atenção deverá ser dada a:
+
+### Imagens
+
+Verificar se:
+
+- a imagem é descartada;
+- é inserida como referência;
+- é convertida para descrição textual;
+- é armazenada separadamente;
+- possui alguma informação associada à sua posição no documento.
+
+### Tabelas
+
+Verificar se são convertidas para:
+
+```
+| Coluna A | Coluna B |
+|----------|----------|
+| Valor 1  | Valor 2  |
+
+```
+
+ou para outra representação.
+
+Também deve ser analisado se a estrutura e o significado das tabelas são preservados após a conversão.
+
+### Resultado esperado
+
+Para cada PDF, deverá existir uma versão Markdown intermediária que possa ser utilizada pelos diferentes splitters.
+
+---
+
+# 3. Estratégias de Chunking
+
+Utilizar os **splitters do LangChain** para realizar os 10 experimentos abaixo. para os itens 4, 5, 6, 7 e 8 pode usar apenas os três arquivos .md das aulas anteriores. Depois que definir as melhores estrategias aplicar para todos os documentos
+
+| Teste Estratégia Configuração Variável isolada  |                |                               |                       |
+| ----------------------------------------------- | -------------- | ----------------------------- | --------------------- |
+| 1                                               | Fixo           | 200 caracteres, sem overlap   | Tamanho extremo baixo |
+| 2                                               | Fixo           | 500 caracteres, sem overlap   | Tamanho               |
+| 3                                               | Fixo           | 1000 caracteres, sem overlap  | Tamanho               |
+| 4                                               | Fixo           | 2000 caracteres, sem overlap  | Tamanho extremo alto  |
+| 5                                               | Fixo + overlap | 500 caracteres, overlap 50    | Overlap leve          |
+| 6                                               | Fixo + overlap | 500 caracteres, overlap 200   | Overlap pesado        |
+| 7                                               | Por parágrafo  | Separação por parágrafos      | Estrutura natural     |
+| 8                                               | Por sentença   | Sentenças agrupadas em 3      | Estrutura natural     |
+| 9                                               | Recursivo      | Separadores hierárquicos      | Estratégia composta   |
+| 10                                              | Markdown       | Separação por headings/seções | Estrutura semântica   |
+
+### Observação
+
+Os testes devem ser implementados utilizando os componentes equivalentes disponíveis no LangChain, evitando implementar manualmente os algoritmos de split quando existir um splitter apropriado na biblioteca.
+
+---
+
+# 4. Testes 1 a 6 - Chunking por tamanho
+
+Nos primeiros seis experimentos, o objetivo é avaliar o impacto do tamanho dos chunks e do overlap.
+
+### Teste 1
+
+```
+chunk_size = 200
+chunk_overlap = 0
+
+```
+
+### Teste 2
+
+```
+chunk_size = 500
+chunk_overlap = 0
+
+```
+
+### Teste 3
+
+```
+chunk_size = 1000
+chunk_overlap = 0
+
+```
+
+### Teste 4
+
+```
+chunk_size = 2000
+chunk_overlap = 0
+
+```
+
+### Teste 5
+
+```
+chunk_size = 500
+chunk_overlap = 50
+
+```
+
+### Teste 6
+
+```
+chunk_size = 500
+chunk_overlap = 200
+
+```
+
+Para esses testes, documentar:
+
+- número total de chunks;
+- tamanho médio;
+- tamanho mínimo;
+- tamanho máximo;
+- quantidade de chunks sobrepostos;
+- percentual de overlap;
+- número de tokens, se possível.
+
+---
+
+# 5. Teste 7 - Por parágrafo
+
+Utilizar uma estratégia que preserve os **parágrafos como unidade de contexto**.
+
+O objetivo é verificar se a estrutura natural do documento produz chunks semanticamente mais coerentes do que a divisão puramente baseada em caracteres.
+
+Registrar:
+
+- quantidade de chunks;
+- tamanho médio;
+- tamanho mínimo/máximo;
+- exemplos de chunks;
+- metadados associados.
+
+---
+
+# 6. Teste 8 - Sentenças agrupadas
+
+Dividir o documento em sentenças e agrupar **3 sentenças por chunk**.
+
+Exemplo:
+
+```
+Sentença 1
+Sentença 2
+Sentença 3
+    ↓
+Chunk 1
+
+Sentença 4
+Sentença 5
+Sentença 6
+    ↓
+Chunk 2
+
+```
+
+O objetivo é comparar uma unidade de contexto baseada em sentenças com as estratégias baseadas em caracteres.
+
+---
+
+# 7. Teste 9 - Recursive Chunking
+
+Utilizar o **Recursive Character Text Splitter**, explorando a ideia de separadores hierárquicos.
+
+A estratégia deverá priorizar a preservação da estrutura do texto, utilizando separadores como:
+
+```
+parágrafos
+↓
+linhas
+↓
+espaços
+↓
+caracteres
+
+```
+
+Registrar a configuração utilizada e justificar a escolha dos parâmetros.
+
+---
+
+# 8. Teste 10 - Markdown / estrutura semântica
+
+Utilizar um splitter específico para documentos Markdown, buscando preservar a estrutura definida pelos headings:
+
+```
+# Seção 1
+
+## Subseção 1.1
+
+Texto...
+
+## Subseção 1.2
+
+Texto...
+
+# Seção 2
+
+Texto...
+
+```
+
+O objetivo é avaliar se a estrutura semântica do documento pode produzir chunks mais adequados para recuperação de informação.
+
+Sempre que possível, preservar nos metadados informações como:
+
+```
+heading
+nível do heading
+seção
+subseção
+
+```
+
+---
+
+# 9. Geração dos Embeddings
+
+Após a divisão dos documentos, gerar um embedding para **cada chunk**.
+
+O modelo de embedding deverá ser escolhido entre as alternativas avaliadas na tarefa anterior (openrouter ou então usando o embeddings do huggingface como alternativa).
+
+Como referência sobre modelos e utilização de embeddings:
+
+[https://huggingface.co/blog/getting-started-with-embeddings](https://huggingface.co/blog/getting-started-with-embeddings)
+
+A implementação deve deixar o modelo configurável, por exemplo:
+
+```
+EMBEDDING_MODEL = "..."
+
+```
+
+Dessa forma, a estratégia de chunking pode ser comparada mantendo o mesmo modelo de embedding.
+
+### Importante
+
+Para que os experimentos sejam comparáveis, **os 10 testes devem utilizar o mesmo modelo de embedding**.
+
+---
+
+# 10. Estrutura dos dados
+
+Cada chunk deverá possuir, no mínimo:
+
+```
+{
+  "chunk_id": "doc01_test05_chunk001",
+  "document_id": "doc01",
+  "document_name": "documento.pdf",
+  "test_id": 5,
+  "strategy": "fixed_with_overlap",
+  "chunk_size": 500,
+  "chunk_overlap": 50,
+  "text": "Conteúdo do chunk...",
+  "embedding": [0.0123, -0.0345, "..."],
+  "metadata": {
+    "page": 10,
+    "section": "Introdução"
+  }
+}
+
+```
+
+Os campos podem ser adaptados de acordo com os metadados efetivamente disponíveis na etapa de extração.
+
+---
+
+# 11. Organização dos arquivos
+
+Os resultados deverão ser organizados de forma que seja possível identificar facilmente:
+
+- documento;
+- estratégia utilizada;
+- chunks;
+- embeddings;
+- configuração do experimento.
+
+Uma sugestão de estrutura:
+
+```
+results/
+├── documento_01/
+│   ├── markdown/
+│   │   └── documento_01.md
+│   │
+│   ├── test_01/
+│   │   └── chunks_embeddings.json
+│   │
+│   ├── test_02/
+│   │   └── chunks_embeddings.json
+│   │
+│   ├── test_03/
+│   │   └── chunks_embeddings.json
+│   │
+│   ├── ...
+│   │
+│   └── test_10/
+│       └── chunks_embeddings.json
+│
+├── documento_02/
+│   └── ...
+│
+└── summary.json
+
+```
+
+---
+
+# 12. Resumo dos experimentos
+
+Além dos arquivos individuais, gerar um `summary.json` contendo informações comparativas dos 10 testes.
+
+Exemplo:
+
+```
+{
+  "document": "documento_01.pdf",
+  "experiments": [
+    {
+      "test_id": 1,
+      "strategy": "fixed",
+      "chunk_size": 200,
+      "chunk_overlap": 0,
+      "num_chunks": 1520,
+      "avg_chunk_size": 198.4,
+      "embedding_dimension": 768
+    }
+  ]
+}
+
+```
+
+---
+
+# 13. Análise obrigatória
+
+Ao final, produzir uma análise comparando as 10 estratégias.
+
+Responder e analisar:
+
+1. Qual estratégia gerou mais chunks?
+2. Qual gerou menos chunks?
+3. Como o tamanho dos chunks variou?
+4. Qual estratégia preservou melhor a estrutura dos documentos?
+5. Como tabelas foram tratadas?
+6. Como imagens foram tratadas?
+7. Quais informações foram perdidas durante a conversão PDF → Markdown?
+8. O chunking por caracteres fragmentou conceitos ou estruturas importantes?
+9. O chunking por parágrafo produziu chunks muito grandes?
+10. O chunking por sentença conseguiu preservar melhor o contexto?
+11. O Recursive Splitter apresentou vantagens?
+12. O Markdown Splitter conseguiu preservar a estrutura semântica?
+13. Qual estratégia parece mais adequada para um sistema de RAG?
+14. Quais estratégias devem ser descartadas?
+15. Quais estratégias você acha que devem ser utilizadas nos próximos experimentos?
+
+---
+
+# 14. Entregar
+
+Ao final da atividade, deverão ser entregues pelo github (pasta aula\_04 ou equivalante):
+
+### Código
+
+Pipeline completo responsável por:
+
+```
+PDF
+ ↓
+Markdown
+ ↓
+10 estratégias de chunking
+ ↓
+Embeddings
+ ↓
+JSON
+
+```
+
+### Dados
+
+Para cada documento:
+
+- Markdown gerado;
+- chunks dos 10 experimentos;
+- embeddings dos 10 experimentos;
+- metadados.
+
+### Relatório
+
+Documento contendo:
+
+- configurações dos 10 testes;
+- estatísticas;
+- exemplos de chunks;
+- análise da conversão PDF → Markdown;
+- análise de tabelas e imagens;
+- comparação das estratégias;
+- conclusão sobre as melhores estratégias.
+
+---
+
+# Resultado esperado
+
+Ao final da tarefa, deverá ser possível responder experimentalmente:
+
+> **Qual estratégia de chunking produz a melhor representação dos documentos para utilização em um sistema de RAG?**
+
+A escolha não deve ser baseada apenas no número de chunks. Deve considerar também a **preservação de contexto, estrutura semântica, integridade de tabelas e informações relevantes, tamanho dos chunks e qualidade da representação vetorial**.
